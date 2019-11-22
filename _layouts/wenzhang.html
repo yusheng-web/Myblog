@@ -1,0 +1,38 @@
+---
+layout: header
+---
+<article>
+
+
+<div style="text-align: center; padding-top: 30px;">
+	<div class="entry-header">
+		<h2 class="entry-title"><a href="single.html">
+		{{page.title}}
+		</a></h2>
+
+		<span class="entry-meta">
+			<ul class="list-inline link">
+				<li>By <a href="#">{{page.author}}</a></li>
+				<li><a href="#">{{page.date | date_to_long_string}}</a></li>
+			</ul>
+		</span>
+		
+	</div>
+	<div class="entry-content">
+		<p>
+	{{content}}
+	   <div  style="text-align: center;">
+        
+          {% if page.previous %}
+            <a class="btn btn-primary float-left" href="{{site.baseurl}}/{{page.previous.url}}">下一篇</a>
+          {% endif %}
+          {% if page.next %}
+            <a class="btn btn-primary float-right" href="{{site.baseurl}}/{{page.next.url}}">上一篇</a>
+          {% endif %}
+        
+      </div>
+		</p>
+	</div>
+
+</div>
+</article>	
